@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeVista - Find Your Dream Home. Live Your Best Life.</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#12347f',
+              dark: '#0c2869',
+              light: '#f5b311',
+              tint: '#fff8e6',
+              accent: '#f5b311',
+              cardborder: '#f1f5f9'
+            },
+            darkNavy: '#10295f',
+            bannerDark: '#10295f'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar & refinements */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Smooth transitions */
+    .btn-hover {
+      transition: all 0.2s ease-in-out;
+    }
+    .btn-hover:hover {
+      transform: translateY(-1px);
+    }
+    /* Subtle card shadow matching UI */
+    .ui-card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    }
+    .search-card-shadow {
+      box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    }
+    article{
+border-radius: 12px;
+    }
+  </style>
+</head>
+<body class="bg-[#fafbfc] min-h-screen text-slate-800">
+
+  <!-- 1. Top Utility Header -->
+  <div class="bg-[#0f172a] text-slate-300 text-[12px] py-2 px-4 md:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <!-- Left info links -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-slate-300">
+        <a href="mailto:info@homevista.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fa-regular fa-envelope text-[11px] text-slate-400"></i>
+          <span>info@homevista.com</span>
+        </a>
+        <a href="tel:+18001234567" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fa-solid fa-phone text-[11px] text-slate-400"></i>
+          <span>+1 (800) 123-4567</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+          <span>123 Dream Street, New York, NY 10001</span>
+        </div>
+      </div>
+      <!-- Right social icons -->
+      <div class="flex items-center gap-3">
+        <span class="text-slate-400 text-[11px]">Follow us:</span>
+        <div class="flex items-center gap-3 text-slate-300 text-[12px]">
+          <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Navigation Bar -->
+  <header class="bg-white sticky top-0 z-50 border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center group" aria-label="Arasan Land Developer home">
+        <img src="assets/logo.jpg" alt="Arasan Land Developer - Create the Values" class="h-14 w-auto max-w-[190px] object-contain">
+      </a>
+
+      <!-- Navigation Links (Desktop) -->
+      <nav class="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-[13px] font-semibold text-slate-600">
+        <a href="#" class="text-brand font-bold relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand">Home</a>
+        <a href="#about" class="whitespace-nowrap hover:text-brand transition-colors">About Us</a>
+        <a href="#featured" class="whitespace-nowrap hover:text-brand transition-colors">Properties</a>
+        <a href="#projects" class="whitespace-nowrap hover:text-brand transition-colors">Projects</a>
+        <a href="#" class="whitespace-nowrap hover:text-brand transition-colors">Services</a>
+        <a href="#" class="whitespace-nowrap hover:text-brand transition-colors">Gallery</a>
+        <a href="#" class="whitespace-nowrap hover:text-brand transition-colors">Blog</a>
+        <a href="#" class="whitespace-nowrap hover:text-brand transition-colors">Contact Us</a>
+      </nav>
+
+      <!-- Right Action CTAs -->
+      <div class="flex items-center gap-4">
+        <!-- Wishlist -->
+        <button class="relative w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand transition-colors" title="Favorites">
+          <i class="fa-regular fa-heart text-[15px]"></i>
+          <span class="absolute -top-1 -right-1 bg-brand text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+        </button>
+        <!-- User Profile icon -->
+        <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 hover:text-brand hover:border-brand transition-colors" title="Account">
+          <i class="fa-regular fa-user text-[15px]"></i>
+        </button>
+        <!-- List Your Property Button -->
+        <a href="#list-property" class="hidden sm:inline-flex items-center justify-center bg-brand hover:bg-[#0c2869] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm shadow-blue-900/20 btn-hover">
+          List Your Property
+        </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-brand p-2 text-xl focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white px-6 py-5 shadow-lg">
+      <div class="flex flex-col gap-3 font-semibold text-slate-700 text-sm">
+        <a href="#" class="text-brand py-1">Home</a>
+        <a href="#about" class="py-1">About Us</a>
+        <a href="#featured" class="py-1">Properties</a>
+        <a href="#projects" class="py-1">Projects</a>
+        <a href="#" class="py-1">Services</a>
+        <a href="#" class="py-1">Gallery</a>
+        <a href="#" class="py-1">Blog</a>
+        <a href="#" class="py-1">Contact Us</a>
+        <div class="pt-3 border-t border-slate-100">
+          <a href="#list-property" class="w-full inline-flex items-center justify-center bg-brand text-white font-semibold py-2.5 rounded-lg">List Your Property</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section -->
+  <section class="pt-10 pb-16 md:pt-14 md:pb-24 overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Hero Text content (Left 5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-[45px] font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+              Find Your Dream Home <br>
+              <span class="text-brand">Live Your Best Life</span>
+            </h1>
+            <p class="text-slate-500 text-base sm:text-lg font-normal pt-2 max-w-lg leading-relaxed">
+              Explore thousands of verified properties and find a place you'll love to call home.
+            </p>
+          </div>
+
+          <!-- Buttons CTA -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#featured" class="inline-flex items-center gap-2 bg-brand hover:bg-[#0c2869] text-white font-semibold text-[15px] px-6 py-3.5 rounded-xl shadow-sm transition-all btn-hover">
+              <span>Explore Properties</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#how-it-works" class="inline-flex items-center gap-2.5 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-[15px] px-6 py-3.5 rounded-xl border border-slate-200 shadow-sm transition-all btn-hover">
+              <span>How It Works</span>
+              <span class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 text-[10px] pl-0.5">
+                <i class="fa-solid fa-play"></i>
+              </span>
+            </a>
+          </div>
+
+          <!-- Social Proof Avatar Stack -->
+          <div class="pt-6 flex items-center gap-3">
+            <div class="flex -space-x-2.5 overflow-hidden">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 1">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 2">
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80" alt="Client 3">
+              <div class="inline-flex h-10 w-10 rounded-full ring-2 ring-white bg-brand text-white items-center justify-center text-xs font-bold">
+                +1
+              </div>
+            </div>
+            <div class="text-sm font-semibold text-slate-700">
+              Trusted by <span class="text-slate-900 font-bold">10,000+</span> happy clients
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image (Right 7 Cols) with Floating Card -->
+        <div class="lg:col-span-7 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[16/11]">
+            <img 
+              src="assets/banner.png" 
+              alt="Luxury modern architectural residence" 
+              class="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Floating Property Price Tag Card matching the image reference -->
+          <div class="absolute bottom-5 sm:bottom-8 right-5 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 shadow-xl border border-white/60 flex items-center gap-4 max-w-[280px] sm:max-w-[310px]">
+            <div class="w-12 h-12 rounded-xl bg-brand text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-blue-900/20">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-bold text-slate-900 text-sm truncate">Modern House</h4>
+                <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+              </div>
+              <p class="text-slate-500 text-xs font-medium truncate">Beverly Hills, CA</p>
+              <div class="text-brand font-extrabold text-base sm:text-lg tracking-tight mt-0.5">$2,450,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Floating Filter & Search Box -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 -mt-6 sm:-mt-10 mb-16 relative z-30">
+    <div class="bg-white rounded-2xl p-4 sm:p-6 search-card-shadow border border-slate-100">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 items-center">
+        <!-- Location input -->
+        <div class="lg:col-span-3 lg:border-r lg:border-slate-100 pr-0 lg:pr-4">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Location</label>
+          <div class="relative flex items-center">
+            <input type="text" placeholder="Enter location" value="" class="w-full bg-transparent text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none pr-6">
+            <i class="fa-solid fa-location-dot text-slate-400 text-xs absolute right-1 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Property Type -->
+        <div class="lg:col-span-2 lg:border-r lg:border-slate-100 px-0 lg:px-3">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Property Type</label>
+          <div class="relative">
+            <select class="w-full bg-transparent text-sm font-semibold text-slate-800 appearance-none focus:outline-none cursor-pointer pr-4">
+              <option>Any Type</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>House</option>
+              <option>Condo</option>
+            </select>
+            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 absolute right-1 top-2 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Price Range -->
+        <div class="lg:col-span-3 lg:border-r lg:border-slate-100 px-0 lg:px-3">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Price Range</label>
+          <div class="relative">
+            <select class="w-full bg-transparent text-sm font-semibold text-slate-800 appearance-none focus:outline-none cursor-pointer pr-4">
+              <option>$0 - $5,000,000+</option>
+              <option>$0 - $500,000</option>
+              <option>$500,000 - $1,000,000</option>
+              <option>$1,000,000 - $2,500,000</option>
+            </select>
+            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 absolute right-1 top-2 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Beds -->
+        <div class="lg:col-span-1 lg:border-r lg:border-slate-100 px-0 lg:px-2">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Beds</label>
+          <div class="relative">
+            <select class="w-full bg-transparent text-sm font-semibold text-slate-800 appearance-none focus:outline-none cursor-pointer pr-3">
+              <option>Any</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
+            </select>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 absolute right-1 top-2 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Baths -->
+        <div class="lg:col-span-1 px-0 lg:px-2">
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Baths</label>
+          <div class="relative">
+            <select class="w-full bg-transparent text-sm font-semibold text-slate-800 appearance-none focus:outline-none cursor-pointer pr-3">
+              <option>Any</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 absolute right-1 top-2 pointer-events-none"></i>
+          </div>
+        </div>
+
+        <!-- Search Button CTA -->
+        <div class="lg:col-span-2">
+          <button class="w-full bg-brand hover:bg-[#0c2869] text-white font-semibold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all btn-hover shadow-md shadow-blue-900/10">
+            <span>Search Properties</span>
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Explore Property Types Section -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Explore Property Types</h2>
+      <a href="#" class="text-brand hover:text-brand-dark font-bold text-sm flex items-center gap-1.5 transition-colors group">
+        <span>View All</span>
+        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+      </a>
+    </div>
+
+    <!-- 6 Category Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <!-- 1. Apartments -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Apartments</h4>
+          <p class="text-[12px] text-slate-400 font-medium">1,245 Listings</p>
+        </div>
+      </a>
+
+      <!-- 2. Houses -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Houses</h4>
+          <p class="text-[12px] text-slate-400 font-medium">2,345 Listings</p>
+        </div>
+      </a>
+
+      <!-- 3. Villas -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-tree-city"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Villas</h4>
+          <p class="text-[12px] text-slate-400 font-medium">856 Listings</p>
+        </div>
+      </a>
+
+      <!-- 4. Condos -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-city"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Condos</h4>
+          <p class="text-[12px] text-slate-400 font-medium">1,032 Listings</p>
+        </div>
+      </a>
+
+      <!-- 5. Townhouses -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Townhouses</h4>
+          <p class="text-[12px] text-slate-400 font-medium">645 Listings</p>
+        </div>
+      </a>
+
+      <!-- 6. Land -->
+      <a href="#" class="bg-white rounded-2xl p-5 border border-slate-100 ui-card-shadow flex items-center gap-3.5 hover:border-brand/40 hover:-translate-y-1 transition-all duration-200 group">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm group-hover:text-brand transition-colors">Land</h4>
+          <p class="text-[12px] text-slate-400 font-medium">321 Listings</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. Featured Properties Section -->
+  <section id="featured" class="max-w-7xl mx-auto px-4 md:px-8 py-12 relative">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Featured Properties</h2>
+      <a href="#" class="text-brand hover:text-brand-dark font-bold text-sm flex items-center gap-1.5 transition-colors group">
+        <span>View All Properties</span>
+        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+      </a>
+    </div>
+
+    <!-- Properties Grid / Carousel Container -->
+    <div class="relative">
+      <div id="propertiesTrack" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        
+        <!-- Property 1: Miami -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 ui-card-shadow hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=700&q=80" alt="Luxury Villa in Miami" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <!-- Badge -->
+              <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide">For Sale</span>
+              <!-- Favorite Heart -->
+              <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-slate-600 hover:text-red-500 hover:bg-white flex items-center justify-center text-xs shadow-sm transition-colors heart-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm truncate hover:text-brand transition-colors">Luxury Villa in Miami</h3>
+              <p class="text-slate-400 text-xs flex items-center gap-1 mt-1">
+                <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+                <span>Miami, FL</span>
+              </p>
+              <div class="text-brand font-extrabold text-lg mt-2">$3,250,000</div>
+            </div>
+          </div>
+          <!-- Specs Footer -->
+          <div class="px-4 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-[11px] font-medium text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-slate-400"></i> 4 Beds</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-slate-400"></i> 5 Baths</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-maximize text-slate-400"></i> 3,200 sq ft</span>
+          </div>
+        </div>
+
+        <!-- Property 2: New York -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 ui-card-shadow hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=700&q=80" alt="Modern Apartment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide">For Rent</span>
+              <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-slate-600 hover:text-red-500 hover:bg-white flex items-center justify-center text-xs shadow-sm transition-colors heart-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm truncate hover:text-brand transition-colors">Modern Apartment</h3>
+              <p class="text-slate-400 text-xs flex items-center gap-1 mt-1">
+                <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+                <span>New York, NY</span>
+              </p>
+              <div class="text-brand font-extrabold text-lg mt-2">$4,500 <span class="text-xs font-semibold text-slate-400">/mo</span></div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-[11px] font-medium text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-slate-400"></i> 2 Beds</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-slate-400"></i> 2 Baths</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-maximize text-slate-400"></i> 1,250 sq ft</span>
+          </div>
+        </div>
+
+        <!-- Property 3: Austin -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 ui-card-shadow hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=700&q=80" alt="Family House in Austin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide">For Sale</span>
+              <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-slate-600 hover:text-red-500 hover:bg-white flex items-center justify-center text-xs shadow-sm transition-colors heart-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm truncate hover:text-brand transition-colors">Family House in Austin</h3>
+              <p class="text-slate-400 text-xs flex items-center gap-1 mt-1">
+                <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+                <span>Austin, TX</span>
+              </p>
+              <div class="text-brand font-extrabold text-lg mt-2">$980,000</div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-[11px] font-medium text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-slate-400"></i> 3 Beds</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-slate-400"></i> 2 Baths</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-maximize text-slate-400"></i> 2,100 sq ft</span>
+          </div>
+        </div>
+
+        <!-- Property 4: Chicago Downtown Condo -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 ui-card-shadow hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Downtown Condo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide">For Sale</span>
+              <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-slate-600 hover:text-red-500 hover:bg-white flex items-center justify-center text-xs shadow-sm transition-colors heart-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm truncate hover:text-brand transition-colors">Downtown Condo</h3>
+              <p class="text-slate-400 text-xs flex items-center gap-1 mt-1">
+                <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+                <span>Chicago, IL</span>
+              </p>
+              <div class="text-brand font-extrabold text-lg mt-2">$680,000</div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-[11px] font-medium text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-slate-400"></i> 2 Beds</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-slate-400"></i> 2 Baths</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-maximize text-slate-400"></i> 1,100 sq ft</span>
+          </div>
+        </div>
+
+        <!-- Property 5: Spacious Townhouse -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 ui-card-shadow hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80" alt="Spacious Townhouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wide">For Rent</span>
+              <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-slate-600 hover:text-red-500 hover:bg-white flex items-center justify-center text-xs shadow-sm transition-colors heart-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm truncate hover:text-brand transition-colors">Spacious Townhouse</h3>
+              <p class="text-slate-400 text-xs flex items-center gap-1 mt-1">
+                <i class="fa-solid fa-location-dot text-[11px] text-slate-400"></i>
+                <span>Chicago, IL</span>
+              </p>
+              <div class="text-brand font-extrabold text-lg mt-2">$3,200 <span class="text-xs font-semibold text-slate-400">/mo</span></div>
+            </div>
+          </div>
+          <div class="px-4 py-3 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between text-[11px] font-medium text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bed text-slate-400"></i> 3 Beds</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-bath text-slate-400"></i> 2.5 Baths</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-maximize text-slate-400"></i> 1,800 sq ft</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Right Arrow overlay as seen in design reference -->
+      <button class="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center text-slate-700 hover:text-brand hover:scale-105 transition-all z-20">
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+      </button>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-7xl mx-auto px-4 md:px-8 py-12 scroll-mt-24">
+    <div class="grid grid-cols-1 xl:grid-cols-[0.85fr_1.7fr] gap-6 xl:gap-8">
+      <div class="relative min-h-[420px] sm:min-h-[560px] xl:min-h-full overflow-hidden rounded-3xl bg-[#10295f] text-white ui-card-shadow">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85" alt="Beautiful home in a landscaped residential community" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#081938]/95 via-[#10295f]/30 to-black/10"></div>
+        <div class="relative z-10 flex min-h-[420px] sm:min-h-[560px] flex-col justify-between p-6 sm:p-9">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold backdrop-blur-sm"><i class="fa-solid fa-star text-amber-300"></i> ARASAN LAND DEVELOPER</span>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-amber-300">A place to grow, live, and belong</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold leading-tight">Find your space.<br>Build your future.</h2>
+            <p class="mt-3 max-w-sm text-sm leading-relaxed text-white/85">Discover thoughtfully located plots and homes, with the essentials for a community you can call your own.</p>
+            <div class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2.5 text-sm font-bold text-[#10295f]"><i class="fa-solid fa-house"></i> Explore our projects</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mb-5">
+          <p class="text-brand font-bold text-xs uppercase tracking-[0.18em] mb-2">Find your place</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Our Projects</h2>
+          <p class="text-slate-500 text-sm mt-2">Residential plots and villas across Tamil Nadu.</p>
+        </div>
+
+        <div class="space-y-4">
+          <article class="grid grid-cols-1 lg:grid-cols-[170px_minmax(150px,1fr)_minmax(240px,1.1fr)] overflow-hidden border border-slate-200 bg-white ui-card-shadow">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=500&q=80" alt="Residential community at Bharani Nagar" class="h-40 lg:h-full min-h-[150px] w-full object-cover">
+            <div class="p-4 sm:p-5 flex flex-col justify-center">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand">DTCP Approved</span>
+              <h3 class="mt-1 text-lg font-extrabold text-slate-900">Bharani Nagar</h3>
+              <p class="mt-1 text-sm text-slate-500"><i class="fa-solid fa-location-dot text-brand mr-1"></i> Mailam</p>
+              <p class="mt-2 text-xs text-slate-500">Near Mailam Murugan Temple; 4 km to the temple and 6 km to Kootteripattu Junction.</p>
+            </div>
+            <div class="border-t lg:border-t-0 lg:border-l border-slate-200 divide-y divide-slate-200">
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-layer-group w-5 text-slate-400"></i> Project type</span><strong class="text-slate-800">Residential plots</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-expand w-5 text-slate-400"></i> Plot size</span><strong class="text-slate-800">1,200 sq. ft.</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-tag w-5 text-slate-400"></i> Price</span><strong class="text-slate-800">399</strong></div>
+              <div class="px-4 py-3 text-xs leading-relaxed text-slate-500">36,000 plots · Guideline 185 · SRO Mailam<br>1,500-acre township, water, street lights, EB line, farmhouses, and guest houses.</div>
+            </div>
+          </article>
+
+          <article class="grid grid-cols-1 lg:grid-cols-[170px_minmax(150px,1fr)_minmax(240px,1.1fr)] overflow-hidden border border-slate-200 bg-white ui-card-shadow">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Homes in the Sri Murugan Avenue community" class="h-40 lg:h-full min-h-[150px] w-full object-cover">
+            <div class="p-4 sm:p-5 flex flex-col justify-center">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand">DTCP Approved</span>
+              <h3 class="mt-1 text-lg font-extrabold text-slate-900">Sri Murugan Avenue</h3>
+              <p class="mt-1 text-sm text-slate-500"><i class="fa-solid fa-location-dot text-brand mr-1"></i> Periyapalayam</p>
+              <p class="mt-2 text-xs text-slate-500">Near Periyapalayam Temple, with walkable access to Periyapalayam highways.</p>
+            </div>
+            <div class="border-t lg:border-t-0 lg:border-l border-slate-200 divide-y divide-slate-200">
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-layer-group w-5 text-slate-400"></i> Project type</span><strong class="text-slate-800">Residential plots</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-expand w-5 text-slate-400"></i> Plot size</span><strong class="text-slate-800">780–1,500 sq. ft.</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-tag w-5 text-slate-400"></i> Price</span><strong class="text-slate-800">1,850</strong></div>
+              <div class="px-4 py-3 text-xs leading-relaxed text-slate-500">15 plots · Guideline 800 · SRO Arani<br>30 ft. tar road, gated community, blacktop road, EB connection, and bank loan availability.</div>
+            </div>
+          </article>
+
+          <article class="grid grid-cols-1 lg:grid-cols-[170px_minmax(150px,1fr)_minmax(240px,1.1fr)] overflow-hidden border border-slate-200 bg-white ui-card-shadow">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=500&q=80" alt="Residential plots at E-City in Thiruvallur" class="h-40 lg:h-full min-h-[150px] w-full object-cover">
+            <div class="p-4 sm:p-5 flex flex-col justify-center">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand">DTCP Approved</span>
+              <h3 class="mt-1 text-lg font-extrabold text-slate-900">E-City</h3>
+              <p class="mt-1 text-sm text-slate-500"><i class="fa-solid fa-location-dot text-brand mr-1"></i> Thiruvallur</p>
+              <p class="mt-2 text-xs text-slate-500">500 m from Thiruvallur Railway Station and CPRR; near John Bosco College.</p>
+            </div>
+            <div class="border-t lg:border-t-0 lg:border-l border-slate-200 divide-y divide-slate-200">
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-layer-group w-5 text-slate-400"></i> Project type</span><strong class="text-slate-800">Residential plots</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-expand w-5 text-slate-400"></i> Plot size</span><strong class="text-slate-800">1,482–2,733 sq. ft.</strong></div>
+              <div class="grid grid-cols-[1fr_auto] gap-3 px-4 py-3 text-sm"><span class="text-slate-500"><i class="fa-solid fa-tag w-5 text-slate-400"></i> Price</span><strong class="text-slate-800">2,050</strong></div>
+              <div class="px-4 py-3 text-xs leading-relaxed text-slate-500">5 plots · Guideline 1,450 · SRO Thiruvallur<br>60 ft. road connectivity, blacktop road, EB line, loan availability. Approval: TN/20/LAYOUT/0150/2020.</div>
+            </div>
+          </article>
+
+      
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="max-w-7xl mx-auto px-4 md:px-8 py-12 scroll-mt-24">
+    <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1.5fr] overflow-hidden rounded-3xl bg-white border border-slate-100 ui-card-shadow">
+      <div class="relative overflow-hidden bg-gradient-to-br from-[#10295f] via-[#173b83] to-[#12347f] p-8 sm:p-10 text-white">
+        <div class="absolute -right-12 -top-12 h-48 w-48 rounded-full border-[28px] border-white/5"></div>
+        <div class="relative">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold tracking-wide text-amber-300">
+            <i class="fa-solid fa-building"></i> ABOUT ARASAN
+          </span>
+          <div class="mt-10 flex h-40 w-40 items-center justify-center rounded-2xl bg-amber-400 text-3xl font-extrabold text-[#10295f] shadow-lg"><img src="assets/arasan.png" alt="Dr. Kalaiarasan Natarajan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20%;"></div>
+          <p class="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-amber-300">Founder &amp; Real Estate Professional</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold leading-tight">Dr. Kalaiarasan Natarajan</h2>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-white/80">Bringing 18 years of sales experience and 17 years of specialized real estate knowledge to every client relationship.</p>
+          <div class="mt-8 flex items-center gap-3 border-t border-white/15 pt-5">
+            <i class="fa-solid fa-location-dot text-amber-300"></i>
+            <span class="text-sm text-white/85">Main office: Arumbakkam, Chennai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-9 lg:p-10">
+        <p class="text-brand font-bold text-xs uppercase tracking-[0.18em]">Experience you can trust</p>
+        <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Building relationships through real estate</h2>
+        <div class="mt-5 inline-flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+          <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-400 text-[#10295f]"><i class="fa-solid fa-star"></i></span>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-800">Our tagline</p>
+            <p class="text-lg font-extrabold tracking-tight text-[#12347f]">Create the Values</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-600">Since 2022, Arasan Land Developer has helped thousands of clients with their property requirements. Our experience also spans banking and legal-related matters, supporting a more informed and transparent property journey.</p>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+            <p class="text-2xl font-extrabold text-brand">18 years</p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Overall sales experience</p>
+          </div>
+          <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+            <p class="text-2xl font-extrabold text-brand">17 years</p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Real estate experience</p>
+          </div>
+          <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+            <p class="text-2xl font-extrabold text-brand">2 lakh+ sq. ft.</p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Current property inventory</p>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-sm font-bold text-slate-900">Our reach</h3>
+          <p class="mt-1 text-xs leading-relaxed text-slate-500">Projects across developing locations in and around Chennai, including:</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-[#805500]">Tiruvallur</span>
+            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-[#805500]">Kanchipuram</span>
+            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-[#805500]">Tindivanam</span>
+            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-[#805500]">Puducherry</span>
+            <span class="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-[#805500]">Other developing areas</span>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100 pt-5">
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <p class="text-xs font-semibold text-slate-700"><span class="text-brand">Arasan Land Developer</span> <span class="text-slate-400">· Since 2022</span></p>
+            <p class="text-xs font-semibold text-slate-700"><span class="text-brand">Arasan Traders</span> <span class="text-slate-400">· Since 1990</span></p>
+          </div>
+          <a href="#projects" class="inline-flex items-center gap-2 text-sm font-bold text-brand hover:text-brand-dark transition-colors">Explore projects <i class="fa-solid fa-arrow-right text-xs"></i></a>
+        </div>
+        <p class="mt-5 text-xs leading-relaxed text-slate-500">Our goal is to help customers find the right property through transparent transactions and reliable service, while building long-term relationships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Why Choose HomeVista? Section -->
+  <section id="how-it-works" class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div class="bg-brand-tint rounded-3xl p-8 sm:p-12 border border-amber-200">
+      <div class="text-center sm:text-left mb-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Why Choose HomeVista?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-white border border-amber-200 text-brand flex items-center justify-center text-xl shrink-0 shadow-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Verified Listings</h4>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">All properties are verified and trusted.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-white border border-amber-200 text-brand flex items-center justify-center text-xl shrink-0 shadow-sm">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Best Price</h4>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">We help you find the best price possible.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-white border border-amber-200 text-brand flex items-center justify-center text-xl shrink-0 shadow-sm">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Expert Agents</h4>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">Our agents are here to guide you 24/7.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-white border border-amber-200 text-brand flex items-center justify-center text-xl shrink-0 shadow-sm">
+            <i class="fa-regular fa-file-lines"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">Easy Process</h4>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">Simple and transparent from start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. What Our Clients Say Section -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">What Our Clients Say</h2>
+      <!-- Carousel controls -->
+      <div class="flex items-center gap-2">
+        <button class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-brand hover:border-brand transition-colors">
+          <i class="fa-solid fa-chevron-left text-xs"></i>
+        </button>
+        <button class="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-brand hover:border-brand transition-colors">
+          <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Testimonial Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Review 1: Emily Johnson -->
+      <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 ui-card-shadow flex flex-col justify-between">
+        <div>
+          <div class="text-brand text-2xl mb-3">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-normal">
+            HomeVista made finding our dream home so easy. The team was professional, helpful, and always available!
+          </p>
+        </div>
+        <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" alt="Emily Johnson">
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Emily Johnson</h4>
+              <p class="text-slate-400 text-xs">New York, NY</p>
+            </div>
+          </div>
+          <!-- 5 Stars -->
+          <div class="flex text-amber-400 text-xs gap-0.5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2: Michael Brown -->
+      <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 ui-card-shadow flex flex-col justify-between">
+        <div>
+          <div class="text-brand text-2xl mb-3">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-normal">
+            The best real estate experience I've ever had. Highly recommend HomeVista to anyone looking to buy or rent.
+          </p>
+        </div>
+        <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="Michael Brown">
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Michael Brown</h4>
+              <p class="text-slate-400 text-xs">Austin, TX</p>
+            </div>
+          </div>
+          <!-- 5 Stars -->
+          <div class="flex text-amber-400 text-xs gap-0.5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3: Sophia Martinez -->
+      <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 ui-card-shadow flex flex-col justify-between">
+        <div>
+          <div class="text-brand text-2xl mb-3">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed font-normal">
+            I sold my property in record time with HomeVista. Their marketing and support were outstanding!
+          </p>
+        </div>
+        <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="Sophia Martinez">
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm">Sophia Martinez</h4>
+              <p class="text-slate-400 text-xs">Miami, FL</p>
+            </div>
+          </div>
+          <!-- 5 Stars -->
+          <div class="flex text-amber-400 text-xs gap-0.5">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. Newsletter Subscription Banner -->
+  <section class="max-w-7xl mx-auto px-4 md:px-8 py-8">
+    <div class="bg-gradient-to-r from-[#10295f] via-[#173b83] to-[#10295f] rounded-3xl p-6 sm:p-10 shadow-xl overflow-hidden relative">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <!-- Left Thumbnail & Text -->
+        <div class="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto text-center sm:text-left">
+          <!-- Room preview image -->
+          <div class="w-32 h-20 rounded-xl overflow-hidden shrink-0 border border-blue-900/50 shadow-md hidden sm:block">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=300&q=80" alt="Modern Living room interior" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Get Exclusive Property Updates</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-md font-normal">
+              Subscribe to our newsletter and be the first to know about new listings and special offers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Input + Subscribe CTA -->
+        <div class="w-full lg:w-auto max-w-md">
+          <form id="newsletterForm" onsubmit="event.preventDefault(); handleSubscribe();" class="flex flex-col sm:flex-row items-center gap-2 sm:gap-0 bg-white/10 backdrop-blur-md p-1.5 rounded-xl border border-white/10">
+            <input 
+              type="email" 
+              id="subEmail"
+              required 
+              placeholder="Enter your email address" 
+              class="w-full bg-white text-slate-800 placeholder-slate-400 text-sm px-4 py-2.5 rounded-lg focus:outline-none"
+            >
+            <button 
+              type="submit" 
+              class="w-full sm:w-auto bg-brand hover:bg-[#0c2869] text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors shrink-0 sm:ml-2"
+            >
+              Subscribe
+            </button>
+          </form>
+          <!-- Subscription confirmation message placeholder -->
+          <p id="subNotice" class="text-xs text-emerald-400 mt-2 font-medium hidden text-center sm:text-left">
+            ✓ Thank you! You've been subscribed successfully.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Footer Section -->
+  <footer class="bg-[#0f172a] text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+      <!-- 5 Columns Footer Content -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
+        
+        <!-- Col 1: Brand Info (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <a href="#" class="inline-flex items-center rounded-xl bg-white p-2" aria-label="Arasan Land Developer home">
+            <img src="assets/logo.jpg" alt="Arasan Land Developer - Create the Values" class="h-16 w-auto max-w-[220px] object-contain">
+          </a>
+          <p class="text-slate-400 text-sm max-w-xs leading-relaxed">
+            Your trusted partner in finding the perfect property.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex items-center gap-3 pt-2 text-slate-300 text-sm">
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-slate-800/80 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links (2 cols) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-bold text-sm mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#" class="hover:text-white transition-colors">Buy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Rent</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Sell</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Agents</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Property Types (2 cols) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-bold text-sm mb-4">Property Types</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#" class="hover:text-white transition-colors">Apartments</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Houses</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Villas</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Condos</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Townhouses</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Land</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Company (2 cols) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-bold text-sm mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact Us (2 cols) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-white font-bold text-sm mb-4">Contact Us</h4>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-brand-light mt-1 text-xs"></i>
+              <span>123 Dream Street<br>New York, NY 10001</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-brand-light text-xs"></i>
+              <a href="tel:+18001234567" class="hover:text-white transition-colors">+1 (800) 123-4567</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-regular fa-envelope text-brand-light text-xs"></i>
+              <a href="mailto:info@homevista.com" class="hover:text-white transition-colors truncate">info@homevista.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <p>© 2024 HomeVista. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          <span>Designed with</span>
+          <span class="text-red-500">❤️</span>
+          <span>for your dream home</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple Interactivity Script for heart toggles, mobile menu & forms -->
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Favorite heart toggles
+    document.querySelectorAll('.heart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const icon = btn.querySelector('i');
+        if (icon.classList.contains('fa-regular')) {
+          icon.classList.remove('fa-regular');
+          icon.classList.add('fa-solid');
+          icon.classList.add('text-red-500');
+        } else {
+          icon.classList.remove('fa-solid');
+          icon.classList.remove('text-red-500');
+          icon.classList.add('fa-regular');
+        }
+      });
+    });
+
+    // Newsletter subscription feedback
+    function handleSubscribe() {
+      const emailInput = document.getElementById('subEmail');
+      const notice = document.getElementById('subNotice');
+      if (emailInput.value) {
+        notice.classList.remove('hidden');
+        emailInput.value = '';
+        setTimeout(() => {
+          notice.classList.add('hidden');
+        }, 5000);
+      }
+    }
+  </script>
+</body>
+</html>
